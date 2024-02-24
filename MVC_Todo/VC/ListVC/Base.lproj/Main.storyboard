@@ -20,11 +20,40 @@
                                 <rect key="frame" x="0.0" y="109" width="393" height="659"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xt3-9v-2HK">
+                                <rect key="frame" x="302" y="50" width="61" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oV4-ll-MXR">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="EI9-oz-wBb"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="추가"/>
+                                        <connections>
+                                            <action selector="actionBtnHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uan-v1-q6H"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fb1-nZ-wZk">
+                                        <rect key="frame" x="31" y="0.0" width="30" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="eea-Hc-9qL"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="삭제"/>
+                                        <connections>
+                                            <action selector="actionBtnHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fa0-v2-yZ8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mcx-j6-Vm5" secondAttribute="bottom" constant="50" id="ENA-61-7DN"/>
+                            <constraint firstItem="Xt3-9v-2HK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="kNE-Mk-uYF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xt3-9v-2HK" secondAttribute="trailing" constant="30" id="rLs-hI-1N6"/>
                             <constraint firstItem="mcx-j6-Vm5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="sQs-It-SeS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mcx-j6-Vm5" secondAttribute="trailing" id="tch-BI-Ow1"/>
                             <constraint firstItem="mcx-j6-Vm5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ylc-6F-hwo"/>

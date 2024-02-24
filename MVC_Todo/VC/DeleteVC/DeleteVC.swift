@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import UIKit
+
+class DeleteVC: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+}
+
+

@@ -9,13 +9,10 @@ import UIKit
 
 class ListTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var userIdLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
-    
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

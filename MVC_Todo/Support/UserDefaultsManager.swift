@@ -22,7 +22,6 @@ class UserDefaultsManager {
 
 
 extension UserDefaultsManager {
-    
     /// Key
     static let keyArrayList = "Array"
 }
