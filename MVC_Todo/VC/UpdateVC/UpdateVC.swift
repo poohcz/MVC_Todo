@@ -10,5 +10,57 @@ import UIKit
 
 class UpdateVC : UIViewController {
     
+    @IBOutlet weak var txfTitle: CommonLineTextField!
+    @IBOutlet weak var txfDetail: CommonLineTextField!
+    @IBOutlet weak var btnAdd: UIButton!
+    @IBOutlet weak var btnBack: UIButton!
+    
+    var indexPath = 0
+    var model = TestModel()
+    var list = [TestModel]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setView()
+    }
+    
+    
+    func setView() {
+        txfTitle.textColor = .black
+        txfTitle.tintColor = .black
+        txfDetail.textColor = .black
+        txfDetail.tintColor = .black
+        
+//        UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyArrayList)
+        
+        if let savedData = UserDefaults.standard.object(forKey: UserDefaultsManager.keyArrayList) as? Data {
+            let decoder = JSONDecoder()
+            if let savedObject = try? decoder.decode([TestModel].self, from: savedData) {
+                print(savedObject)
+                list = savedObject
+            }
+        }
+    }
+    
+    
+    @IBAction func btnBack(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    @IBAction func btnUpdate(_ sender: Any) {
+        
+        print("befor list : \(list)")
+        print("befor model : \(model)")
+        
+        list[indexPath] = (TestModel(id: 0, userId: 0, body: txfTitle.text ?? "", title: txfDetail.text ?? ""))
+        
+        let encoder = JSONEncoder()
+        
+        // 담는거1
+        if let encoded = try? encoder.encode(list) {
+            UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyArrayList)
+        }
+        print("after list : \(list)")
+        print("after model : \(model)")
+    }
     
 }
