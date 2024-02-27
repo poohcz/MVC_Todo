@@ -10,6 +10,7 @@ import UIKit
 class ListVC: UIViewController {
     
     @IBOutlet weak var listTableView: UITableView!
+    @IBOutlet weak var countLabel: UILabel!
     
     var list: [TestModel] = []
     var firstFlag = false
@@ -25,7 +26,7 @@ class ListVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let savedData = UserDefaults.standard.object(forKey: UserDefaultsManager.keyArrayList) as? Data {
-            var savedObject = try? decoder.decode([TestModel].self, from: savedData)
+            let savedObject = try? decoder.decode([TestModel].self, from: savedData)
             list = savedObject ?? [TestModel(id: 0, userId: 0, body: "nil", title: "nil")]
         }
         
@@ -46,6 +47,7 @@ class ListVC: UIViewController {
             } else if let items = items {
                 self.operateEncode()
                 list = items
+                countLabel.text = String(list.count)
                 listTableView.reloadData()
             }
         }
@@ -60,16 +62,12 @@ class ListVC: UIViewController {
     @IBAction func actionBtnHandle(_ sender: UIButton) {
         // 추가버튼
         if sender.tag == 0 {
-            print("추가")
-                        let storyboard = UIStoryboard(name : "InsertVC", bundle: Bundle.main)
+            let storyboard = UIStoryboard(name : "InsertVC", bundle: Bundle.main)
             let afterVC = storyboard.instantiateViewController(identifier: "InsertVC")
-            
             guard let secondViewController = afterVC as? InsertVC else { return }
-                    // 화면 전환 애니메이션 설정
-                    secondViewController.modalTransitionStyle = .coverVertical
-                    // 전환된 화면이 보여지는 방법 설정 (fullScreen)
-                    secondViewController.modalPresentationStyle = .fullScreen
-                    self.present(secondViewController, animated: true, completion: nil)
+            secondViewController.modalTransitionStyle = .coverVertical
+            secondViewController.modalPresentationStyle = .fullScreen
+            self.present(secondViewController, animated: true, completion: nil)
         }
         // 삭제버튼
         else {
@@ -79,6 +77,7 @@ class ListVC: UIViewController {
             DispatchQueue.main.async {
                 self.operateEncode()
                 self.operateDecode()
+                self.countLabel.text = String(self.list.count)
             }
         }
     }
@@ -125,14 +124,11 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
         let storyboard = UIStoryboard(name : "UpdateVC", bundle: Bundle.main)
         let afterVC = storyboard.instantiateViewController(identifier: "UpdateVC")
         
-        
         guard let secondViewController = afterVC as? UpdateVC else { return }
-                // 화면 전환 애니메이션 설정
-                secondViewController.modalTransitionStyle = .coverVertical
-                // 전환된 화면이 보여지는 방법 설정 (fullScreen)
-                secondViewController.modalPresentationStyle = .fullScreen
-                secondViewController.indexPath = indexPath.row
-                self.present(secondViewController, animated: true, completion: nil)
+        secondViewController.modalTransitionStyle = .coverVertical
+        secondViewController.modalPresentationStyle = .fullScreen
+        secondViewController.indexPath = indexPath.row
+        self.present(secondViewController, animated: true, completion: nil)
     }
     
 }

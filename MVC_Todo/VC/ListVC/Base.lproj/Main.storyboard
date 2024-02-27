@@ -47,19 +47,29 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yde-e0-qMT">
+                                <rect key="frame" x="176" y="59" width="41.333333333333343" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Yde-e0-qMT" firstAttribute="centerY" secondItem="oV4-ll-MXR" secondAttribute="centerY" id="8Ag-nB-PbA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mcx-j6-Vm5" secondAttribute="bottom" constant="50" id="ENA-61-7DN"/>
+                            <constraint firstItem="Yde-e0-qMT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e3U-sc-AD4"/>
                             <constraint firstItem="Xt3-9v-2HK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="kNE-Mk-uYF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xt3-9v-2HK" secondAttribute="trailing" constant="30" id="rLs-hI-1N6"/>
                             <constraint firstItem="mcx-j6-Vm5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="sQs-It-SeS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mcx-j6-Vm5" secondAttribute="trailing" id="tch-BI-Ow1"/>
+                            <constraint firstItem="Yde-e0-qMT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xXk-tv-OXw"/>
                             <constraint firstItem="mcx-j6-Vm5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ylc-6F-hwo"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="countLabel" destination="Yde-e0-qMT" id="JbL-rk-74G"/>
                         <outlet property="listTableView" destination="mcx-j6-Vm5" id="wBL-P5-boo"/>
                     </connections>
                 </viewController>
