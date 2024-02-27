@@ -24,10 +24,10 @@ class CommonLineTextField: UITextField {
         self.borderStyle = .none
         let border = CALayer()
         border.frame = CGRect(x: 0, y: self.frame.size.height-1, width: self.frame.width, height: 1)
-        border.backgroundColor = UIColor.white.cgColor
+        border.backgroundColor = UIColor.black.cgColor
         self.layer.addSublayer(border)
         self.textAlignment = .center
-        self.textColor = UIColor.white
+        self.textColor = UIColor.black
     }
     
 }

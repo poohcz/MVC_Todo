@@ -8,8 +8,8 @@
 import Foundation
 
 struct TestModel: Codable {
-    let id: Int
-    let userId: Int
-    let body: String
-    let title: String
+    var id: Int = 0
+    var userId: Int = 0
+    var body: String = ""
+    var title: String = ""
 }
