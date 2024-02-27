@@ -13,6 +13,8 @@ class ListVC: UIViewController {
     
     var list: [TestModel] = []
     var firstFlag = false
+    let encoder = JSONEncoder()
+    let decoder = JSONDecoder()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +24,9 @@ class ListVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
         if let savedData = UserDefaults.standard.object(forKey: UserDefaultsManager.keyArrayList) as? Data {
-            let decoder = JSONDecoder()
-            
             var savedObject = try? decoder.decode([TestModel].self, from: savedData)
             list = savedObject ?? [TestModel(id: 0, userId: 0, body: "nil", title: "nil")]
-            
         }
         
         listTableView.reloadData()
@@ -47,16 +44,8 @@ class ListVC: UIViewController {
             if let error = error {
                 print("Error: \(error)")
             } else if let items = items {
-                
-                let encoder = JSONEncoder()
-                
-                // 담는거1
-                if let encoded = try? encoder.encode(items) {
-                    UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyArrayList)
-                }
-                
+                self.operateEncode()
                 list = items
-
                 listTableView.reloadData()
             }
         }
@@ -72,10 +61,8 @@ class ListVC: UIViewController {
         // 추가버튼
         if sender.tag == 0 {
             print("추가")
-            
-            let storyboard = UIStoryboard(name : "InsertVC", bundle: Bundle.main)
+                        let storyboard = UIStoryboard(name : "InsertVC", bundle: Bundle.main)
             let afterVC = storyboard.instantiateViewController(identifier: "InsertVC")
-            
             
             guard let secondViewController = afterVC as? InsertVC else { return }
                     // 화면 전환 애니메이션 설정
@@ -88,19 +75,30 @@ class ListVC: UIViewController {
         else {
             print("삭제")
             list.removeLast()
-            let encoder = JSONEncoder()
             
-            // 담는거1
-            if let encoded = try? encoder.encode(list) {
-                UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyArrayList)
+            DispatchQueue.main.async {
+                self.operateEncode()
+                self.operateDecode()
             }
-            print("삭제완료")
         }
     }
     
+    func operateEncode() {
+        // 담는거1
+        if let encoded = try? encoder.encode(list) {
+            UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyArrayList)
+        }
+        listTableView.reloadData()
+    }
     
-
-
+    func operateDecode() {
+        if let savedData = UserDefaults.standard.object(forKey: UserDefaultsManager.keyArrayList) as? Data {
+            if let savedObject = try? decoder.decode([TestModel].self, from: savedData) {
+                list = savedObject
+            }
+        }
+        listTableView.reloadData()
+    }
 
 }
 

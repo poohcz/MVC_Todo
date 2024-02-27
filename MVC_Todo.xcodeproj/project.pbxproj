@@ -17,8 +17,6 @@
 		B6973E752B837DB20061B13F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6973E732B837DB20061B13F /* LaunchScreen.storyboard */; };
 		B6973E7D2B837E600061B13F /* InsertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6973E7C2B837E600061B13F /* InsertVC.swift */; };
 		B6973E7F2B837E680061B13F /* InsertVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6973E7E2B837E680061B13F /* InsertVC.storyboard */; };
-		B6973E822B837E7A0061B13F /* DeleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6973E812B837E7A0061B13F /* DeleteVC.swift */; };
-		B6973E842B837E810061B13F /* DeleteVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6973E832B837E810061B13F /* DeleteVC.storyboard */; };
 		B6973E8A2B837EB70061B13F /* UpdateVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6973E892B837EB70061B13F /* UpdateVC.storyboard */; };
 		B6973E8C2B837EBC0061B13F /* UpdateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6973E8B2B837EBC0061B13F /* UpdateVC.swift */; };
 		B6973E902B837EE60061B13F /* J_Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6973E8F2B837EE60061B13F /* J_Network.swift */; };
@@ -43,8 +41,6 @@
 		B6973E762B837DB20061B13F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6973E7C2B837E600061B13F /* InsertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertVC.swift; sourceTree = "<group>"; };
 		B6973E7E2B837E680061B13F /* InsertVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InsertVC.storyboard; sourceTree = "<group>"; };
-		B6973E812B837E7A0061B13F /* DeleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteVC.swift; sourceTree = "<group>"; };
-		B6973E832B837E810061B13F /* DeleteVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteVC.storyboard; sourceTree = "<group>"; };
 		B6973E892B837EB70061B13F /* UpdateVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UpdateVC.storyboard; sourceTree = "<group>"; };
 		B6973E8B2B837EBC0061B13F /* UpdateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVC.swift; sourceTree = "<group>"; };
 		B6973E8F2B837EE60061B13F /* J_Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = J_Network.swift; sourceTree = "<group>"; };
@@ -119,15 +115,6 @@
 			path = InsertVC;
 			sourceTree = "<group>";
 		};
-		B6973E852B837E840061B13F /* DeleteVC */ = {
-			isa = PBXGroup;
-			children = (
-				B6973E812B837E7A0061B13F /* DeleteVC.swift */,
-				B6973E832B837E810061B13F /* DeleteVC.storyboard */,
-			);
-			path = DeleteVC;
-			sourceTree = "<group>";
-		};
 		B6973E882B837EAE0061B13F /* ListVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				B6973E802B837E6C0061B13F /* InsertVC */,
-				B6973E852B837E840061B13F /* DeleteVC */,
 				B6973E8D2B837EC00061B13F /* UpdateVC */,
 				B6973E882B837EAE0061B13F /* ListVC */,
 			);
@@ -268,7 +254,6 @@
 				B6973E8A2B837EB70061B13F /* UpdateVC.storyboard in Resources */,
 				B6973E722B837DB20061B13F /* Assets.xcassets in Resources */,
 				B6973E702B837DB10061B13F /* Main.storyboard in Resources */,
-				B6973E842B837E810061B13F /* DeleteVC.storyboard in Resources */,
 				B67480342B85A85600641FA5 /* ListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,7 +266,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B67480332B85A85600641FA5 /* ListTableViewCell.swift in Sources */,
-				B6973E822B837E7A0061B13F /* DeleteVC.swift in Sources */,
 				CB7B0B322B864257004E0BC0 /* CommonLineTextField.swift in Sources */,
 				CB773C712B88DA900098AF16 /* UserDefaultsManager.swift in Sources */,
 				B6973E952B837F090061B13F /* Strings.swift in Sources */,
