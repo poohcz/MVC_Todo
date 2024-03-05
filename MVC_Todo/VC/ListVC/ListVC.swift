@@ -13,41 +13,43 @@ class ListVC: UIViewController {
     @IBOutlet weak var countLabel: UILabel!
     
     var list: [TestModel] = []
-    var firstFlag = false
-    let encoder = JSONEncoder()
-    let decoder = JSONDecoder()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        callApi()
+        checkCallApi()
         setupTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let savedData = UserDefaults.standard.object(forKey: UserDefaultsManager.keyArrayList) as? Data {
-            let savedObject = try? decoder.decode([TestModel].self, from: savedData)
-            list = savedObject ?? [TestModel(id: 0, userId: 0, body: "nil", title: "nil")]
+
+        if let savedData = UserDefaults.standard.object(forKey: UserDefaultsManager.keyApiList) as? Data {
+            let decoded = CodableManager.operateDecode(savedData)
+            list = decoded
         }
         
+        countLabel.text = String(list.count)
         listTableView.reloadData()
     }
     
-    private func callApi() {
-        if firstFlag {
-            return
+    private func checkCallApi() {
+        if let savedData = UserDefaults.standard.object(forKey: UserDefaultsManager.keyApiList) as? Data {
+        } else {
+            callApi()
         }
-        
+    }
+    
+    private func callApi() {
         D_Network.shared.fetchDataFromAPI { [weak self] (items, error) in
             guard let self = self else { return }
-            firstFlag = true
-
+            
             if let error = error {
-                print("Error: \(error)")
+                
             } else if let items = items {
-                self.operateEncode()
                 list = items
                 countLabel.text = String(list.count)
+                let encoded = CodableManager.operateEncode(items)
+                UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyApiList)
                 listTableView.reloadData()
             }
         }
@@ -75,28 +77,12 @@ class ListVC: UIViewController {
             list.removeLast()
             
             DispatchQueue.main.async {
-                self.operateEncode()
-                self.operateDecode()
+                let encoded = CodableManager.operateEncode(self.list)
+                UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyApiList)
                 self.countLabel.text = String(self.list.count)
+                self.listTableView.reloadData()
             }
         }
-    }
-    
-    func operateEncode() {
-        // 담는거1
-        if let encoded = try? encoder.encode(list) {
-            UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyArrayList)
-        }
-        listTableView.reloadData()
-    }
-    
-    func operateDecode() {
-        if let savedData = UserDefaults.standard.object(forKey: UserDefaultsManager.keyArrayList) as? Data {
-            if let savedObject = try? decoder.decode([TestModel].self, from: savedData) {
-                list = savedObject
-            }
-        }
-        listTableView.reloadData()
     }
 
 }

@@ -33,12 +33,10 @@ class UpdateVC : UIViewController {
         
 //        UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyArrayList)
         
-        if let savedData = UserDefaults.standard.object(forKey: UserDefaultsManager.keyArrayList) as? Data {
-            let decoder = JSONDecoder()
-            if let savedObject = try? decoder.decode([TestModel].self, from: savedData) {
-                print(savedObject)
-                list = savedObject
-            }
+        if let savedData = UserDefaults.standard.object(forKey: UserDefaultsManager.keyApiList) as? Data {
+            
+            list = CodableManager.operateDecode(savedData) as! [TestModel]
+            
         }
     }
     
@@ -53,12 +51,9 @@ class UpdateVC : UIViewController {
         
         list[indexPath] = (TestModel(id: 0, userId: 0, body: txfTitle.text ?? "", title: txfDetail.text ?? ""))
         
-        let encoder = JSONEncoder()
-        
         // 담는거1
-        if let encoded = try? encoder.encode(list) {
-            UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyArrayList)
-        }
+        let encoded = CodableManager.operateEncode(self.list)
+        UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyApiList)
         print("after list : \(list)")
         print("after model : \(model)")
     }

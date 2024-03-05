@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930277792B8F1EFC00685273 /* EncodeDecodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930277782B8F1EFC00685273 /* EncodeDecodeManager.swift */; };
 		B67480332B85A85600641FA5 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67480312B85A85600641FA5 /* ListTableViewCell.swift */; };
 		B67480342B85A85600641FA5 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B67480322B85A85600641FA5 /* ListTableViewCell.xib */; };
 		B6973E692B837DB10061B13F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6973E682B837DB10061B13F /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		930277782B8F1EFC00685273 /* EncodeDecodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodeDecodeManager.swift; sourceTree = "<group>"; };
 		B67480312B85A85600641FA5 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		B67480322B85A85600641FA5 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		B6973E652B837DB10061B13F /* MVC_Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVC_Todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				CB773C702B88DA900098AF16 /* UserDefaultsManager.swift */,
+				930277782B8F1EFC00685273 /* EncodeDecodeManager.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				B6973E692B837DB10061B13F /* AppDelegate.swift in Sources */,
 				B6973E8C2B837EBC0061B13F /* UpdateVC.swift in Sources */,
 				B6973E982B837F1A0061B13F /* TestModel.swift in Sources */,
+				930277792B8F1EFC00685273 /* EncodeDecodeManager.swift in Sources */,
 				B6973E6B2B837DB10061B13F /* SceneDelegate.swift in Sources */,
 				B6973E7D2B837E600061B13F /* InsertVC.swift in Sources */,
 				B6973E902B837EE60061B13F /* J_Network.swift in Sources */,
@@ -428,7 +432,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GP6Y9N29T9;
+				DEVELOPMENT_TEAM = LDD56A5RVR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MVC_Todo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -436,12 +440,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = JangAndKim.MVC.Todo;
+				PRODUCT_BUNDLE_IDENTIFIER = JangAndKim.MVC.Todo.AA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -456,7 +461,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GP6Y9N29T9;
+				DEVELOPMENT_TEAM = LDD56A5RVR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MVC_Todo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -464,12 +469,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = JangAndKim.MVC.Todo;
+				PRODUCT_BUNDLE_IDENTIFIER = JangAndKim.MVC.Todo.AA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

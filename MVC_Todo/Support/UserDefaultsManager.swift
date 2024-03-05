@@ -6,16 +6,16 @@ class UserDefaultsManager {
         UserDefaults.standard.set(value, forKey: forKey)
     }
     
-    static func dictionary(forKey: String) -> [String: Any] {
-        return UserDefaults.standard.dictionary(forKey: forKey) ?? [:]
+    static func bool(forKey: String) -> Bool {
+        return UserDefaults.standard.bool(forKey: forKey)
     }
     
-    static func array(forKey: String) -> [Any] {
-        return UserDefaults.standard.array(forKey: forKey) ?? []
+    static func data(forKey: String) -> Data? {
+        return UserDefaults.standard.data(forKey: forKey)
     }
     
-    static func model(forKey: String) -> [TestModel]  {
-        return UserDefaults.standard.value(forKey: forKey) as! [TestModel]
+    static func string(forKey: String) -> String {
+        return UserDefaults.standard.string(forKey: forKey) ?? ""
     }
     
 }
@@ -23,5 +23,6 @@ class UserDefaultsManager {
 
 extension UserDefaultsManager {
     /// Key
-    static let keyArrayList = "Array"
+    static let keyApiList = "APILIST"
+    static let keyApiFirstChk = "BoolValue"
 }

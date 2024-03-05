@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "2D63085C-990D-4A26-9788-03B081714E38"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF70F0E3-5252-4EE6-801C-D3E9E318BC4C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVC_Todo/VC/ListVC/ListVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CF70F0E3-5252-4EE6-801C-D3E9E318BC4C - e1be75e917955c08"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVC_Todo.ListVC.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "MVC_Todo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/softpuzzle/Desktop/todo/MVC_Todo/VC/ListVC/ListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  uuid = "CF70F0E3-5252-4EE6-801C-D3E9E318BC4C - e1be75e917955c08"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVC_Todo.ListVC.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "MVC_Todo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/softpuzzle/Desktop/todo/MVC_Todo/VC/ListVC/ListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "220">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "79C4406E-8336-44B2-BBFC-67BAF5E100A2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVC_Todo/VC/ListVC/ListVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "callApi()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "79C4406E-8336-44B2-BBFC-67BAF5E100A2 - caed4059d46d4ea2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVC_Todo.ListVC.callApi() -&gt; ()"
+                  moduleName = "MVC_Todo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/softpuzzle/Desktop/todo/MVC_Todo/VC/ListVC/ListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "79C4406E-8336-44B2-BBFC-67BAF5E100A2 - caed4059d46d4ea2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVC_Todo.ListVC.callApi() -&gt; ()"
+                  moduleName = "MVC_Todo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/softpuzzle/Desktop/todo/MVC_Todo/VC/ListVC/ListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
