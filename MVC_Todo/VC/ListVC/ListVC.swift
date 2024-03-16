@@ -16,17 +16,20 @@ class ListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.callApi()
-        setupTableView()
+        viewModel.callApi(completion: {
+            self.setupTableView()
+            self.setView()
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        viewModel.decodeList()
-        
+        self.setView()
+    }
+    
+    private func setView() {
+        self.listTableView.reloadData()
         countLabel.text = String(viewModel.listCount)
-        listTableView.reloadData()
     }
     
     private func setupTableView() {

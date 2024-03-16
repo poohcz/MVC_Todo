@@ -23,6 +23,7 @@ class ListViewModel {
             list = decoded
         }
     }
+    
     func encodeList() {
         let encoded = CodableManager.operateEncode(list)
         UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyApiList)
@@ -33,8 +34,7 @@ class ListViewModel {
 
 /** 서버 통신 */
 extension ListViewModel {
- 
-    func callApi() {
+    func callApi(completion: @escaping() -> ()) {
         if !UserDefaultsManager.bool(forKey: UserDefaultsManager.keyApiFirstChk) {
             UserDefaultsManager.set(true, forKey: UserDefaultsManager.keyApiFirstChk)
             D_Network.shared.fetchDataFromAPI { [weak self] (items, error) in
@@ -46,6 +46,7 @@ extension ListViewModel {
                     list = items
                     let encoded = CodableManager.operateEncode(items)
                     UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyApiList)
+                    completion()
                 }
             }
         }
