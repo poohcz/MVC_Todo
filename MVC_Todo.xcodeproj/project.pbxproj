@@ -25,7 +25,10 @@
 		B6973E952B837F090061B13F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6973E942B837F090061B13F /* Strings.swift */; };
 		B6973E982B837F1A0061B13F /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6973E972B837F1A0061B13F /* TestModel.swift */; };
 		B6973E9C2B837F5D0061B13F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B6973E9B2B837F5D0061B13F /* Alamofire */; };
+		CB7317642B9B60870063B680 /* InsertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7317632B9B60870063B680 /* InsertViewModel.swift */; };
+		CB7317662B9B6A5E0063B680 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7317652B9B6A5E0063B680 /* ListViewModel.swift */; };
 		CB773C712B88DA900098AF16 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB773C702B88DA900098AF16 /* UserDefaultsManager.swift */; };
+		CB7795632B9BFD9E00D07BFD /* UpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7795622B9BFD9E00D07BFD /* UpdateViewModel.swift */; };
 		CB7B0B322B864257004E0BC0 /* CommonLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7B0B312B864256004E0BC0 /* CommonLineTextField.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +52,10 @@
 		B6973E912B837EF20061B13F /* D_Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_Network.swift; sourceTree = "<group>"; };
 		B6973E942B837F090061B13F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		B6973E972B837F1A0061B13F /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		CB7317632B9B60870063B680 /* InsertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertViewModel.swift; sourceTree = "<group>"; };
+		CB7317652B9B6A5E0063B680 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		CB773C702B88DA900098AF16 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		CB7795622B9BFD9E00D07BFD /* UpdateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewModel.swift; sourceTree = "<group>"; };
 		CB7B0B312B864256004E0BC0 /* CommonLineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonLineTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +119,7 @@
 			children = (
 				B6973E7C2B837E600061B13F /* InsertVC.swift */,
 				B6973E7E2B837E680061B13F /* InsertVC.storyboard */,
+				CB7317632B9B60870063B680 /* InsertViewModel.swift */,
 			);
 			path = InsertVC;
 			sourceTree = "<group>";
@@ -123,6 +130,7 @@
 				B6973E6C2B837DB10061B13F /* ListVC.swift */,
 				B6973E6E2B837DB10061B13F /* Main.storyboard */,
 				B67480352B85A85D00641FA5 /* ListTableViewCell */,
+				CB7317652B9B6A5E0063B680 /* ListViewModel.swift */,
 			);
 			path = ListVC;
 			sourceTree = "<group>";
@@ -132,6 +140,7 @@
 			children = (
 				B6973E892B837EB70061B13F /* UpdateVC.storyboard */,
 				B6973E8B2B837EBC0061B13F /* UpdateVC.swift */,
+				CB7795622B9BFD9E00D07BFD /* UpdateViewModel.swift */,
 			);
 			path = UpdateVC;
 			sourceTree = "<group>";
@@ -273,14 +282,17 @@
 				CB773C712B88DA900098AF16 /* UserDefaultsManager.swift in Sources */,
 				B6973E952B837F090061B13F /* Strings.swift in Sources */,
 				B6973E6D2B837DB10061B13F /* ListVC.swift in Sources */,
+				CB7317662B9B6A5E0063B680 /* ListViewModel.swift in Sources */,
 				B6973E692B837DB10061B13F /* AppDelegate.swift in Sources */,
 				B6973E8C2B837EBC0061B13F /* UpdateVC.swift in Sources */,
 				B6973E982B837F1A0061B13F /* TestModel.swift in Sources */,
 				930277792B8F1EFC00685273 /* EncodeDecodeManager.swift in Sources */,
 				B6973E6B2B837DB10061B13F /* SceneDelegate.swift in Sources */,
 				B6973E7D2B837E600061B13F /* InsertVC.swift in Sources */,
+				CB7317642B9B60870063B680 /* InsertViewModel.swift in Sources */,
 				B6973E902B837EE60061B13F /* J_Network.swift in Sources */,
 				B6973E922B837EF20061B13F /* D_Network.swift in Sources */,
+				CB7795632B9BFD9E00D07BFD /* UpdateViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +444,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LDD56A5RVR;
+				DEVELOPMENT_TEAM = GP6Y9N29T9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MVC_Todo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -446,7 +458,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = JangAndKim.MVC.Todo.AA;
+				PRODUCT_BUNDLE_IDENTIFIER = JangAndKim.MVC.Todo.AA00;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -461,7 +473,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LDD56A5RVR;
+				DEVELOPMENT_TEAM = GP6Y9N29T9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MVC_Todo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -475,7 +487,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = JangAndKim.MVC.Todo.AA;
+				PRODUCT_BUNDLE_IDENTIFIER = JangAndKim.MVC.Todo.AA00;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -15,7 +15,7 @@ class InsertVC : UIViewController {
     @IBOutlet weak var btnAdd: UIButton!
     @IBOutlet weak var btnBack: UIButton!
     
-    var list = [TestModel]()
+    let viewModel = InsertViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +27,8 @@ class InsertVC : UIViewController {
         txfTitle.tintColor = .black
         txfDetail.textColor = .black
         txfDetail.tintColor = .black
-        
-//        UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyArrayList)
-        
-        if let savedData = UserDefaults.standard.object(forKey: UserDefaultsManager.keyApiList) as? Data {
-            
-            list = CodableManager.operateDecode(savedData) 
-            
-        }
+         
+        viewModel.decodeList()
     }
     
     @IBAction func btnBackAction(_ sender: Any) {
@@ -42,15 +36,8 @@ class InsertVC : UIViewController {
     }
     
     @IBAction func brnAddAction(_ sender: Any) {
-        
-        print("befor list : \(list)")
-        
-        list.append(TestModel(id: 0, userId: 0, body: txfTitle.text ?? "", title: txfDetail.text ?? ""))
-        
-        // 담는거1
-        let encoded = CodableManager.operateEncode(self.list)
-        UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyApiList)
-        print("after list : \(list)")
+        viewModel.listInsert(title: txfTitle.text ?? "", detail: txfDetail.text ?? "")
+        viewModel.encodeList()
     }
     
 }

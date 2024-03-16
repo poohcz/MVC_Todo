@@ -16,8 +16,7 @@ class UpdateVC : UIViewController {
     @IBOutlet weak var btnBack: UIButton!
     
     var indexPath = 0
-    var model = TestModel()
-    var list = [TestModel]()
+    let viewModel = UpdateViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +32,7 @@ class UpdateVC : UIViewController {
         
 //        UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyArrayList)
         
-        if let savedData = UserDefaults.standard.object(forKey: UserDefaultsManager.keyApiList) as? Data {
-            
-            list = CodableManager.operateDecode(savedData) as! [TestModel]
-            
-        }
+        viewModel.decodeList()
     }
     
     
@@ -46,16 +41,12 @@ class UpdateVC : UIViewController {
     }
     @IBAction func btnUpdate(_ sender: Any) {
         
-        print("befor list : \(list)")
-        print("befor model : \(model)")
         
-        list[indexPath] = (TestModel(id: 0, userId: 0, body: txfTitle.text ?? "", title: txfDetail.text ?? ""))
+       // list[indexPath] = (TestModel(id: 0, userId: 0, body: txfTitle.text ?? "", title: txfDetail.text ?? ""))
+        viewModel.list[indexPath] = viewModel.listUpdate(body: txfTitle.text ?? "", title: txfDetail.text ?? "")
         
-        // 담는거1
-        let encoded = CodableManager.operateEncode(self.list)
-        UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyApiList)
-        print("after list : \(list)")
-        print("after model : \(model)")
+        viewModel.encodeList()
+
     }
     
 }

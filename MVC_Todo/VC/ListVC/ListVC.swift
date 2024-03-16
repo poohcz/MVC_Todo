@@ -12,47 +12,21 @@ class ListVC: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var countLabel: UILabel!
     
-    var list: [TestModel] = []
+    let viewModel = ListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkCallApi()
+        viewModel.callApi()
         setupTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        if let savedData = UserDefaults.standard.object(forKey: UserDefaultsManager.keyApiList) as? Data {
-            let decoded = CodableManager.operateDecode(savedData)
-            list = decoded
-        }
         
-        countLabel.text = String(list.count)
+        viewModel.decodeList()
+        
+        countLabel.text = String(viewModel.listCount)
         listTableView.reloadData()
-    }
-    
-    private func checkCallApi() {
-        if let savedData = UserDefaults.standard.object(forKey: UserDefaultsManager.keyApiList) as? Data {
-        } else {
-            callApi()
-        }
-    }
-    
-    private func callApi() {
-        D_Network.shared.fetchDataFromAPI { [weak self] (items, error) in
-            guard let self = self else { return }
-            
-            if let error = error {
-                
-            } else if let items = items {
-                list = items
-                countLabel.text = String(list.count)
-                let encoded = CodableManager.operateEncode(items)
-                UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyApiList)
-                listTableView.reloadData()
-            }
-        }
     }
     
     private func setupTableView() {
@@ -74,12 +48,11 @@ class ListVC: UIViewController {
         // 삭제버튼
         else {
             print("삭제")
-            list.removeLast()
+            viewModel.deleteList()
             
             DispatchQueue.main.async {
-                let encoded = CodableManager.operateEncode(self.list)
-                UserDefaultsManager.set(encoded, forKey: UserDefaultsManager.keyApiList)
-                self.countLabel.text = String(self.list.count)
+                self.viewModel.encodeList()
+                self.countLabel.text = String(self.viewModel.listCount)
                 self.listTableView.reloadData()
             }
         }
@@ -89,13 +62,14 @@ class ListVC: UIViewController {
 
 extension ListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return viewModel.listCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "listcell", for: indexPath) as? ListTableViewCell else { return UITableViewCell() }
         
-        cell.setInfo(info: list[indexPath.row])
+        //cell.setInfo(info: viewModel.list[indexPath.row])
+        cell.setInfo(info: viewModel.listInfo(index: indexPath.row))
         
         return cell
     }
